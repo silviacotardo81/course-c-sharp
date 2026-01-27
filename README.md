@@ -2,125 +2,157 @@
 
 ## Description
 
-This repository is designed as a hands-on learning project to reinforce and deepen knowledge of **C#**, with a strong focus on language fundamentals, compile-time behavior, project structure, and good development practices.
+This repository is a hands-on learning project designed to **reinforce and regain fluency in C#**, with a strong focus on:
 
-The goal is not only to make code work, but to **understand how and why it works**, from the compiler’s perspective and through intentional design decisions.
+- Language fundamentals
+- Compile-time behavior
+- Intentional project structure
+- Clean, defensible coding practices
 
-This project serves as a learning log, technical reference, and foundation to regain or strengthen hands-on proficiency in C#, following a clear, incremental, and professional approach.
+The goal is not only to make code work, but to **understand how and why it works**, from the compiler’s perspective and through deliberate design decisions.
+
+This project serves as a **learning log, technical reference, and interview-ready foundation** for C# and .NET development.
 
 ---
 
 ## Objectives
 
 - Build a solid foundation in the C# language  
-- Understand the C# type system and its compile-time behavior  
+- Understand the C# type system and compile-time behavior  
 - Use explicit types and type inference (`var`) intentionally  
-- Practice fundamentals through small, focused exercises  
-- Maintain a clean and defensible project structure  
-- Work with Git using disciplined workflows (branches, commits, PRs)  
+- Practice fundamentals and algorithms through focused exercises  
+- Maintain a clean and scalable project structure  
+- Use Git with disciplined, professional workflows  
 
 ---
 
 ## Learning Scope
 
-This project follows a structured learning path focused on progressing from **C# language fundamentals** to **basic backend development with ASP.NET Core**, aligned with official learning modules.
+The project follows a structured progression from **C# language fundamentals** to **problem-solving and backend-oriented thinking**.
 
-### 1. C# Language Fundamentals (Console Applications)
+### 1. C# Language Fundamentals (Console-Based)
 
-This first phase focuses on mastering the core elements of the C# language through console applications, including:
+This phase focuses on mastering the core elements of the C# language using console applications:
 
-- Writing first C# programs and understanding program structure  
-- Creating and running C# console applications using the .NET CLI  
-- Working with variables, literals, and data types  
-- Understanding compile-time type inference (`var`) and explicit typing  
-- Adding logic with conditionals and loops  
-- Managing variable data and state  
-- Creating and organizing methods  
-- Debugging C# console applications  
+- Program structure and entry point (`Program.cs`)
+- Variables, literals, and data types
+- Type inference vs explicit typing
+- String interpolation and escape sequences
+- Arithmetic operations and casting
+- Control flow and basic logic
+- Small, focused exercises to build fluency
 
-All concepts are reinforced through small, focused exercises aimed at building fluency and confidence with the language.
-
----
-
-### 2. Intermediate C# and Application Structure
-
-As the fundamentals solidify, the focus expands to:
-
-- Writing cleaner and more modular console applications  
-- Improving code readability and maintainability  
-- Applying basic organization and design principles  
-- Using Git intentionally as part of the learning process  
-
-This phase emphasizes *thinking in C#*, not just writing syntax.
+All concepts are isolated into runnable modules under the `Fundamentals` folder.
 
 ---
 
-### 3. Introduction to ASP.NET Core and Web APIs
+### 2. Algorithms and Problem Solving (Interview-Oriented)
 
-Once the language foundation is established, the project evolves into backend development with ASP.NET Core:
+This phase introduces classic algorithmic exercises commonly used in technical interviews, implemented in C# with clarity and intention:
 
-- Creating Web APIs using ASP.NET Core controllers  
-- Understanding request and response handling  
-- Structuring simple APIs following .NET conventions  
+- Array-based problems
+- String manipulation
+- Hash-based patterns
+- Clean separation between logic and execution
+- Emphasis on readability and reasoning, not memorization
 
-This stage serves as an entry point into backend development, not as a full production-ready API.
-
----
-
-### 4. Cloud-Native Foundations with .NET
-
-The final stage introduces cloud-native concepts using .NET and ASP.NET Core:
-
-- Understanding the basics of cloud-native application design  
-- Exploring how .NET applications evolve beyond local execution  
-- Preparing the ground for future scalability and service-based architectures  
+Each algorithm is implemented as a pure `Solve` method, with execution handled separately.
 
 ---
 
-## Scope Boundaries
+### 3. Evolution Path (Planned)
 
-To keep the learning focused and effective, this project intentionally does **not** include:
+As the project evolves, it will naturally expand toward:
 
-- Complex frontend frameworks  
-- Advanced UI development  
-- Heavy architectural abstractions  
-- Production-level infrastructure or deployment pipelines  
+- More advanced C# features
+- Better application structure
+- Backend development with ASP.NET Core
+- Preparation for cloud-native and service-based architectures
 
-The emphasis remains on **language mastery, fundamentals, and intentional progression**.
+The focus remains on **progressive learning**, not premature complexity.
 
 ---
 
 ## Project Structure
+
 ```bash
-/exercises
-  /basic
-    - print-literal-values.cs
-    - ...
-Program.cs
-course-c-sharp.csproj
-.gitignore
-- `exercises/`: exercises organized by topic or level  
-- `basic/`: language fundamentals (variables, types, literals, etc.)  
-- `Program.cs`: entry point for execution and experimentation  
-- `.gitignore`: excludes build artifacts (`bin/`, `obj/`)  
+CodingAssessment
+│
+├── Program.cs
+│
+├── Fundamentals
+│   ├── VariablesAndTypes.cs
+│   ├── StringsAndInterpolation.cs
+│   ├── EscapeSequences.cs
+│   ├── ArithmeticAndCasting.cs
+│   └── ControlExercises
+│       └── GradesCalculator.cs
+│
+├── Exercises
+│   ├── Arrays
+│   │   ├── TwoSum.cs
+│   │   └── ContainsDuplicate.cs
+│   ├── Strings
+│   │   ├── IsPalindrome.cs
+│   │   └── FirstNonRepeatedChar.cs
+│   └── Hashing
+│
+├── course-c-sharp.csproj
+└── .gitignore
+
 ```
 
-The structure may evolve as the learning path progresses.
+## Project Structure
 
----
-
-## Project Rules
-
-- Generated files (`bin/`, `obj/`) are never committed  
-- Every change must have a clear purpose  
-- Commits should be small and descriptive  
-- Code should be understandable without external explanation  
+- `Program.cs`: single entry point and CLI router  
+- `Fundamentals/`: C# language fundamentals and syntax refreshers  
+- `Exercises/`: algorithmic exercises organized by pattern  
+- `bin/`, `obj/`: build artifacts (ignored)  
 
 ---
 
 ## How to Run
 
+This project uses a single `Program.cs` and runs different modules via command-line arguments.
+
 From the project root:
 
+## Run Fundamentals
+
 ```bash
-dotnet run
+dotnet run variables
+dotnet run strings
+dotnet run escape
+dotnet run arithmetic
+dotnet run grades
+```
+
+## Run Algorithms
+
+```bash
+dotnet run containsduplicate
+dotnet run twosum
+dotnet run palindrome
+dotnet run firstunique
+```
+
+Running without arguments will display the available options.
+
+## Project Rules
+
+Generated files (bin/, obj/) are never committed
+
+One project → one Program.cs
+
+Logic (Solve) is separated from execution (Run)
+
+Every change must have a clear purpose
+
+Commits should be small, descriptive, and intentional
+
+Code should be readable without external explanation
+
+## Notes
+
+This repository prioritizes clarity, intent, and learning depth over speed or volume.
+It is designed to reflect professional engineering standards, even in a learning context.
