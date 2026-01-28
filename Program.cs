@@ -56,10 +56,41 @@ namespace CodingAssessment
                     RunFirstNonRepeatedChar();
                     break;
 
+                case "servicetime":
+                    RunServiceTime();
+                    break;
+
+                case "concurrencypeak":
+                    RunConcurrencyPeak();
+                    break;
+
                 default:
                     ShowHelp();
                     break;
             }
+        }
+
+        private static void RunConcurrencyPeak()
+        {
+            int[][] requests =
+            {
+                new int[] { 1, 4 },
+                new int[] { 2, 6 },
+                new int[] { 3, 5 },
+                new int[] { 7, 9 }
+            };
+
+            int result = ConcurrencyPeak.Solve(requests);
+            Console.WriteLine(result); // debería imprimir 3
+        }
+
+        private static void RunServiceTime()
+        {
+            int[] requests = { 1, 4, 7, 10, 13 };
+            int t = 12;
+            int x = 7;
+            int result = ServiceTime.Solve(requests, t, x);
+            Console.WriteLine(result);
         }
 
         // ===== Algorithm runners =====
@@ -108,6 +139,7 @@ namespace CodingAssessment
             Console.WriteLine("  dotnet run twosum");
             Console.WriteLine("  dotnet run palindrome");
             Console.WriteLine("  dotnet run firstunique");
+            Console.WriteLine("  dotnet run servicetime");
         }
     }
 }
