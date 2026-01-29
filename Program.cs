@@ -3,6 +3,7 @@ using CodingAssessment.Fundamentals;
 using CodingAssessment.Fundamentals.ControlExercises;
 using CodingAssessment.Exercises.Arrays;
 using CodingAssessment.Exercises.Strings;
+using CodingAssessment.Exercises.Graph;
 
 namespace CodingAssessment
 {
@@ -64,10 +65,28 @@ namespace CodingAssessment
                     RunConcurrencyPeak();
                     break;
 
+                case "taxicalls":
+                    RunTaxiCalls();
+                    break;
+
                 default:
                     ShowHelp();
                     break;
             }
+        }
+
+// ===== Algorithm runners =====
+        private static void RunTaxiCalls()
+        {
+            int[][] calls =
+            {
+                new int[] {10, 20, 1, 2},  // Viaje 0
+                new int[] {25, 35, 2, 3},  // Viaje 1
+                new int[] {40, 50, 3, 4},  // Viaje 2
+                new int[] {22, 30, 2, 5}   // Viaje 3
+            };
+            int result = TaxiCalls.Solve(calls);
+            Console.WriteLine(result); 
         }
 
         private static void RunConcurrencyPeak()
@@ -92,8 +111,6 @@ namespace CodingAssessment
             int result = ServiceTime.Solve(requests, t, x);
             Console.WriteLine(result);
         }
-
-        // ===== Algorithm runners =====
 
         static void RunContainsDuplicate()
         {
@@ -140,6 +157,7 @@ namespace CodingAssessment
             Console.WriteLine("  dotnet run palindrome");
             Console.WriteLine("  dotnet run firstunique");
             Console.WriteLine("  dotnet run servicetime");
+            Console.WriteLine("  dotnet run taxicalls");
         }
     }
 }
